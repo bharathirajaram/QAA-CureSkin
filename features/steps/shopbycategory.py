@@ -5,7 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 CHOOSE_BODY = (By.CSS_SELECTOR,"nav.header__inline-menu li list-menu-item[data-title='Body'")
-SHOP_CATEGORY = (By.CSS_SELECTOR,"nav.header__inline-menu li summary svg")
+# SHOP_CATEGORY = (By.CSS_SELECTOR,"nav.header__inline-menu li summary svg")
+SHOP_CATEGORY = (By.XPATH, "//span[text()='Shop by Category' and (@class='label')]")
+
+POP_UP_CLOSE_BTN = (By.XPATH, "//button[@class='popup-close']")
 # SHOP_CATEGORY = (By.XPATH, "//summary[@class = 'header__menu-item header__menu-item--top list-menu__item focus-inset']//span[contains(text(),'Shop by Category')]")
 
 
@@ -21,26 +24,31 @@ def click_category(context ):
     # order_button=context.driver.find_element(*CLICK_CART)
     # context.driver.wait.until(EC.element_to_be_clickable(order_button))
     # order_button.click()
+    print ("close popup")
+    close_popup=context.app.main_page.find_elements(*POP_UP_CLOSE_BTN)
+    close_popup.click()
+
+
     print('about to click')
-    # sleep(5)
-    # print('after sleep to click')
-    # myelement=context.app.main_page.find_element(*SHOP_CATEGORY)
-    # print("element text:",myelement.text)
-    # context.app.main_page.click(*SHOP_CATEGORY)
-    # sleep(10)
+    sleep(5)
+    print('after sleep to click')
+    myelement=context.app.main_page.find_element(*SHOP_CATEGORY)
+    print("element text:",myelement.text)
+    context.app.main_page.click(*SHOP_CATEGORY)
+    sleep(5)
 
-    catlist=context.app.main_page.find_elements(*SHOP_CATEGORY)
-    print("category list length:", len(catlist))
-    for cat in catlist:
-        print("category text",cat.text)
-        if cat.text == 'SHOP BY CATEGORY':
-            cat.click()
-
-
-    if len(catlist) >2 :
-        category=catlist[2]
-        print("category text",category.text)
-        category.click()
+    # catlist=context.app.main_page.find_elements(*SHOP_CATEGORY)
+    # print("category list length:", len(catlist))
+    # for cat in catlist:
+    #     print("category text",cat.text)
+    #     if cat.text == 'SHOP BY CATEGORY':
+    #         cat.click()
+    #
+    #
+    # if len(catlist) >2 :
+    #     category=catlist[2]
+    #     print("category text",category.text)
+    #     category.click()
 @when('Click Body Menu item')
 def click_Body(context ):
     # order_button=context.driver.find_element(*CLICK_CART)
