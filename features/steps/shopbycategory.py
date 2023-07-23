@@ -25,7 +25,8 @@ def click_category(context ):
     #close popup window
     context.app.main_page.wait_for_element_click(*POP_UP_CLOSE_BTN)
     # click Shop by Category
-    context.app.main_page.click(*SHOP_CATEGORY)
+    # sleep(10)
+    context.app.main_page.wait_for_element_click(*SHOP_CATEGORY)
 
 @when('Click Body Menu item')
 def click_Body(context ):
