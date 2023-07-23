@@ -69,3 +69,22 @@ _adjustedError@resource://services-settings/RemoteSettingsClient.sys.mjs:911:14
 maybeSync@resource://services-settings/RemoteSettingsClient.sys.mjs:816:38
 
 console.error: (new NetworkError("Network error: TypeError: NetworkError: Network request failed", "resource://services-settings/RemoteSettingsClient.sys.mjs", 111))
+1690081071085	geckodriver	INFO	Listening on 127.0.0.1:51738
+1690081071578	mozrunner::runner	INFO	Running command: MOZ_CRASHREPORTER="1" MOZ_CRASHREPORTER_NO_REPORT="1" MOZ_CRASHREPORTER_SHUTDOWN="1" MOZ_NO_REMOTE="1" "/App ... s" "localhost" "-foreground" "-no-remote" "-profile" "/var/folders/my/hgkmtlyx5vx5j1b64h56qthh0000gn/T/rust_mozprofileFgooa6"
+console.warn: services.settings: Ignoring preference override of remote settings server
+console.warn: services.settings: Allow by setting MOZ_REMOTE_SETTINGS_DEVTOOLS=1 in the environment
+1690081077823	Marionette	INFO	Marionette enabled
+2023-07-22 22:57:59.017 plugin-container[3885:101377] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-07-22 22:57:59.018 plugin-container[3885:101377] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-07-22 22:57:59.051 plugin-container[3885:101377] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-07-22 22:57:59.051 plugin-container[3885:101377] nil host used in call to allowsAnyHTTPSCertificateForHost:
+2023-07-22 22:57:59.052 plugin-container[3885:101373] nil host used in call to allowsSpecificHTTPSCertificateForHost
+2023-07-22 22:57:59.053 plugin-container[3885:101373] nil host used in call to allowsAnyHTTPSCertificateForHost:
+console.error: "Warning: unrecognized command line flag -remote-allow-hosts\n"
+1690081079816	Marionette	INFO	Listening on port 51746
+Read port: 51746
+WebDriver BiDi listening on ws://127.0.0.1:51739
+1690081080128	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+DevTools listening on ws://127.0.0.1:51739/devtools/browser/4a989b75-d07e-400c-9c89-a14727676b9f
+1690081094227	Marionette	WARN	Ignoring event 'pageshow' because document has an invalid readyState of 'loading'.
+1690081101133	Marionette	INFO	Stopped listening on port 51746
