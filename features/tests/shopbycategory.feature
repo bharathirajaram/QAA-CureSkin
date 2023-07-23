@@ -5,4 +5,4 @@ Scenario: Verify That Category Body product is being shown up
   Given Open CureSkin Shopping page
   When Click Shop by Category Menu
   When Click Body Menu item
-  Then Verify that Body text is exists in URL
+  Then Verify that body text is exists in URL

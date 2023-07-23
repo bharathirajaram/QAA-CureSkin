@@ -21,43 +21,20 @@ def open_cureskin(context):
 
 @when('Click Shop by Category Menu')
 def click_category(context ):
-    # order_button=context.driver.find_element(*CLICK_CART)
-    # context.driver.wait.until(EC.element_to_be_clickable(order_button))
-    # order_button.click()
-    print ("close popup")
-    close_popup=context.app.main_page.find_elements(*POP_UP_CLOSE_BTN)
-    close_popup.click()
-
-
-    print('about to click')
-    sleep(5)
-    print('after sleep to click')
-    myelement=context.app.main_page.find_element(*SHOP_CATEGORY)
-    print("element text:",myelement.text)
+    # sleep(2)
+    #close popup window
+    context.app.main_page.wait_for_element_click(*POP_UP_CLOSE_BTN)
+    # click Shop by Category
     context.app.main_page.click(*SHOP_CATEGORY)
-    sleep(5)
 
-    # catlist=context.app.main_page.find_elements(*SHOP_CATEGORY)
-    # print("category list length:", len(catlist))
-    # for cat in catlist:
-    #     print("category text",cat.text)
-    #     if cat.text == 'SHOP BY CATEGORY':
-    #         cat.click()
-    #
-    #
-    # if len(catlist) >2 :
-    #     category=catlist[2]
-    #     print("category text",category.text)
-    #     category.click()
 @when('Click Body Menu item')
 def click_Body(context ):
-    # order_button=context.driver.find_element(*CLICK_CART)
-    # context.driver.wait.until(EC.element_to_be_clickable(order_button))
-    # order_button.click()
+    #Click Body menu item
     context.app.main_page.wait_for_element_click(*CHOOSE_BODY)
 
 
 @then('Verify that {category} text is exists in URL')
-def verify_amazon_empty_page_open(context,category):
+def verify_selected_category_exists(context,category):
+    #Verify the URL contains that category name
     context.app.main_page.verify_url_contains_query(category)
 
